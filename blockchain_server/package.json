@@ -1,0 +1,19 @@
+{
+  "name": "autogrowchain-servers",
+  "version": "1.0.0",
+  "description": "AutoGrowChain Blockchain API Servers",
+  "main": "supply_server.js",
+  "scripts": {
+    "supply": "node supply_server.js",
+    "tpl": "node tpl_server.js",
+    "auto": "node automation.js",
+    "data": "node data_server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.15.0",
+    "express": "^5.1.0"
+  }
+}

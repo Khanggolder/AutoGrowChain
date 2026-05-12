@@ -1,0 +1,52 @@
+# Secret Keys - NEVER upload
+.env
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Hardhat build artifacts
+artifacts/
+cache/
+typechain-types/
+
+# AI Models (too large for GitHub, use separate download)
+*.pth
+*.onnx
+*.pt
+*.h5
+
+# Training datasets (too large)
+detect/data/voice/InsectSet66_Train_Val/
+
+# Database files (auto-generated on first run)
+*.db
+*.db-wal
+*.db-shm
+*.sqlite3
+
+# Build output
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Frontend video assets (optional, large)
+frontend_dashboard/public/video.mp4
