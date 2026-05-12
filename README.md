@@ -1,47 +1,52 @@
-# AUTOGROWCHAIN: HE THONG NONG NGHIEP THONG MINH TICH HOP BLOCKCHAIN VA AI
+# AutoGrowChain: Smart Agriculture Ecosystem Integrated with Blockchain & AI
 
-AutoGrowChain la mot nen tang quan ly nong nghiep hien dai, chuyen doi mo hinh trang trai truyen thong sang Farm-as-a-Service (Dich vu cho thue trang trai). He thong ket hop suc manh cua cong nghe Blockchain de truy xuat nguon goc bat bien va Agent AI de toi uu hoa quy trinh canh tac.
+AutoGrowChain is an advanced agricultural management platform that transforms traditional farming into a **Farm-as-a-Service (FaaS)** model. By integrating Blockchain for immutable traceability and Multi-Agent AI for operational optimization, it provides a transparent and efficient bridge between urban investors and high-tech agriculture.
 
-## CAC CONG NGHE COT LOI
+## Core Modules
 
-1. BLOCKCHAIN (PIONE Zero / Hardhat Node)
-- Smart Contracts: Solidity (ERC-721 cho NFT cay trong va Supply Chain).
-- Truy xuat nguon goc: Toan bo nhat ky cham soc duoc bam (hash) va luu tru vinh vien tren mang luoi.
-- Marketplace: Cho phep thue cay thong qua NFT Rent-a-Tree.
+### 1. Blockchain-Powered Marketplace & Traceability
+- **Tree Renting via NFT (ERC-721)**: Users can "rent" physical trees in the farm by minting unique NFTs. The transaction is secured via Smart Contracts, granting the holder exclusive monitoring and harvest rights.
+- **Immutable Log Hash**: Every agricultural action (watering, fertilizing, pest control) is hashed and recorded on the **PIONE Zero (Local Hardhat Node)** blockchain, preventing any data manipulation.
+- **Public Traceability**: Consumers can scan a QR code to access a verified history of the plant's life cycle, ensuring organic integrity and food safety.
 
-2. TRI TUE NHAN TAO (AI MULTI-AGENT)
-- AI Strategic Advisor: Su dung LLaMA 3.1 du bao thu hoach va tu van ban hang dua tren du lieu thi truong real-time.
-- AI Vision (Faster R-CNN): Nhan dien 9 loai benh ly tren cay ca chua tu hinh anh.
-- Audio AI (ResNet18): Phan tich am thanh con trung va tu dong kich hoat song sieu am xua duoi (Repel Hz).
-- AI Financial Report: Tu dong phan tich du lieu tai chinh va viet bao cao loi nhuan.
+### 2. Multi-Agent AI Intelligence
+- **AI Strategic Advisor (LLaMA 3.1)**: Analyzes real-time sensor data and live market prices (automatically crawled) to provide harvest recommendations and sales strategies (e.g., "Sell Now" vs "Hold").
+- **AI Vision (Faster R-CNN)**: Analyzes images of tomato leaves to detect 9 distinct disease types (e.g., Late Blight, Anthracnose, Blossom End Rot) with specialized treatment suggestions.
+- **Audio AI (ResNet18)**: Monitors the farm for specific insect acoustic signatures. Upon detection, it triggers specialized ultrasonic frequencies (Repel Hz) via the hardware speaker to deter pests without chemicals.
+- **AI Financial Report**: Automatically processes all database records (expenses, harvests, VIP customers) to generate professional margin analysis and business growth reports.
 
-3. INTERNET OF THINGS (IOT) & ROBOTICS
-- Firmware: ESP32 (C++/Arduino).
-- Sensors: Theo doi do am dat, pH, muc nuoc, cam bien mua va khoang cach sieu am.
-- Robotics: Dieu khien canh tay robot 4 DOF qua WebSocket voi tinh nang Record & Play (day robot thu hoach).
-- Live Stream: WebRTC stream video do tre thap voi giao dien chuyen dung cho chu so huu cay.
+### 3. IoT & Advanced Robotics
+- **Hardware Integration**: Driven by **ESP32** firmware managing a suite of sensors (Soil Moisture, pH, Water Level, Rain detection).
+- **Robotic Arm Control (4-DOF)**: Controlled via WebSocket with a "Record & Play" feature, allowing farmers to teach the robot complex harvesting or maintenance movements.
+- **WebRTC Live Streaming**: High-performance, low-latency (<0.5s) video feed with integrated sensor overlays for real-time monitoring by tree owners.
 
-## CAU TRUC DU AN
+## Project Structure
 
-- /frontend_dashboard: Giao dien dieu khien (ReactJS, Vite).
-- /blockchain_contracts: Ma nguon Smart Contracts (Solidity, Hardhat).
-- /blockchain_server: Backend xu ly giao dich va du lieu Blockchain (Node.js, Express, SQLite).
-- /backend_ai: Backend xu ly cac mo hinh AI (Python, FastAPI, PyTorch).
-- /firmware_esp32: Ma nguon cho thiet bi phan cung ESP32.
-- /detect: Du lieu train va cac model AI (Faster R-CNN, ResNet18).
+- `/frontend_dashboard`: The administrative and user interface built with React and Vite.
+- `/blockchain_contracts`: Solidity Smart Contracts and Hardhat deployment environment.
+- `/blockchain_server`: Backend services for blockchain interactions, data logging, and SQLite persistence.
+- `/backend_ai`: FastAPI server hosting the Multi-Agent AI logic and machine learning models.
+- `/firmware_esp32`: C++/Arduino source code for the IoT hardware and robotics controller.
+- `/detect`: Training scripts, datasets, and pre-trained weights for Faster R-CNN and ResNet18 models.
 
-## HUONG DAN CAI DAT
+## Technology Stack
 
-Vui long doc file HOW_TO_RUN.md de biet chi tiet cac buoc khoi chay he thong.
+- **Frontend**: React, Vanilla CSS, WebRTC.
+- **Blockchain Server**: Node.js, Express, Ethers.js, SQLite3.
+- **AI Backend**: Python, FastAPI, PyTorch, TorchVision, Torchaudio.
+- **Smart Contracts**: Solidity, Hardhat.
+- **Hardware**: ESP32, Servo library, AsyncTCP.
 
-## MO HINH VAN HANH
+## Operational Setup
 
-He thong hoat dong dua tren 5 server doc lap:
-1. Supply Chain API (Port 3000)
-2. TPL Data API (Port 3005)
-3. Data API - SQLite (Port 3010)
-4. AI Service (Port 8000)
-5. Frontend Dashboard (Port 5173)
+The system operates across a distributed architecture of 5 independent services:
+1. **Supply Chain API** (Port 3000): Blockchain product management.
+2. **TPL Data API** (Port 3005): Immutable logging service.
+3. **Data API** (Port 3010): Primary database for plants and analytics.
+4. **AI Service** (Port 8000): Computer vision and LLM agents.
+5. **Frontend Dashboard** (Port 5173): Central control panel.
+
+For detailed installation and startup instructions, please refer to [HOW_TO_RUN.md](HOW_TO_RUN.md).
 
 ---
-AutoGrowChain - Innovative Smart Farming Ecosystem.
+AutoGrowChain - Pioneering the Future of Transparent and Automated Agriculture.
