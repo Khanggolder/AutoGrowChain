@@ -1,3 +1,6 @@
+# Private documents
+Storage_txt/
+
 # Secret Keys - NEVER upload
 .env
 
