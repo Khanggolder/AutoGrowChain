@@ -1,5 +1,6 @@
 # Private documents
 Storage_txt/
+detect/
 
 # Secret Keys - NEVER upload
 .env
