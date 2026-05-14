@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # Frontend + Reverse Proxy
+  frontend:
+    build: ./frontend_dashboard
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - supply-server
+      - tpl-server
+      - data-server
+      - ai-backend
+    restart: always
+
+  # Blockchain: Supply Chain Server
+  supply-server:
+    build: ./blockchain_server
+    command: npm run supply
+    env_file: ./blockchain_server/.env
+    restart: always
+
+  # Blockchain: TPL Data Server
+  tpl-server:
+    build: ./blockchain_server
+    command: npm run tpl
+    env_file: ./blockchain_server/.env
+    restart: always
+
+  # Blockchain: Data API (SQLite)
+  data-server:
+    build: ./blockchain_server
+    command: npm run data
+    env_file: ./blockchain_server/.env
+    volumes:
+      - ./blockchain_server:/app/data # For SQLite persistence
+    restart: always
+
+  # AI Backend (FastAPI)
+  ai-backend:
+    build: ./backend_ai
+    env_file: ./blockchain_server/.env # Reusing the env for keys
+    restart: always
+
+volumes:
+  db-data:
